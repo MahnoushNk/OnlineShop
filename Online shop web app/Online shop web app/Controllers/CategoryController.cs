@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Online_shop_web_app.Models;
+using Online_shop_web_app.Models.Entities;
 
 namespace Online_shop_web_app.Controllers
 {
