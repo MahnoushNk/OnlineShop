@@ -1,8 +1,33 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<Online_shop_web_app.Models.Product>;
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div>
+        <h1 class="display-1">Welcome to OnlineShop</h1>
+        <h2 class="display-6">We make you look better</h2>
+
+
+        <br />
+
+        <div class="container border border-secondary" style="padding-top:20px">
+            <div class="row">
+
+                @foreach (var product in Model)
+                {
+                    <div class="col-4 mb-5">
+                        <form asp-controller="Product" asp-action="Index">
+                            <h3>@product.Name</h3>
+
+                            <b>@product.Price $</b>
+                            <br />
+
+                            <input type="hidden" name="Title" value="@product.Name" />
+
+                            <input type="hidden" name="Price" value="@product.Price" />
+                            <input type="submit" value="buy this" class="btn btn-primary mt-1" />
+                        </form>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
 </div>
