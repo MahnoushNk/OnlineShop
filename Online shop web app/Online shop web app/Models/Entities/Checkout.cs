@@ -6,9 +6,8 @@
 
 
         public int Id { get; set; }
-        public Person person { get; set; }
-        public string ProductName { get; set; }
-        public int ProductPrice { get; set; }
+        public User person { get; set; }
+       public int ProductId { get; set; }
 
 
     }

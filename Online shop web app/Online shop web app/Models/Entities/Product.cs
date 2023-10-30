@@ -11,8 +11,8 @@ namespace Online_shop_web_app.Models.Entities
         public int CategoryId { get; set; }
         public List<Comment> comments { get; set; } 
 
-        public string Description { get; set; }
-        public int AvailableProduct { get; set; }
+        public string? Description { get; set; }
+        public int? AvailableProduct { get; set; }
         public List<RelatedProcuct> relatedProcucts { get; set; }
 
         public List<ShareProduct> shareProducts { get; set; }

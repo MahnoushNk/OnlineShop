@@ -2,7 +2,7 @@
 
 public class ShareProduct
 {
-    public int Id { get; set; }
-    public List<Product> Products { get; set; }
+    
+    public List<Product> ShareProducts { get; set; }
 
 }

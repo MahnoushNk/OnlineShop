@@ -1,8 +1,8 @@
-﻿@model IEnumerable<Online_shop_web_app.Models.Entities.Product>;
+﻿@model IEnumerable<Online_shop_web_app.Models.Entities.Category>;
 
 <div class="text-center">
     <div>
-        <h1 class="display-1">Welcome to OnlineShop</h1>
+        <h1 class="display-1">OnlineShop</h1>
         <h2 class="display-6">We make you look better</h2>
 
 
@@ -11,18 +11,18 @@
         <div class="container border border-secondary" style="padding-top:20px">
             <div class="row">
 
-                @foreach (var product in Model)
+                @foreach (var Category in Model)
                 {
                     <div class="col-4 mb-5">
-                        <form asp-controller="Product" asp-action="Index">
-                            <h3>@product.Name</h3>
+                        <form asp-controller="Category" asp-action="ListOfCategory">
+                            <h3>@Category.Name</h3>
 
-                            <b>@product.Price $</b>
+                            <b>@Category.Products $</b>
                             <br />
 
-                            <input type="hidden" name="Title" value="@product.Name" />
+                            <input type="hidden" name="Title" value="@Category.Name" />
 
-                            <input type="hidden" name="Price" value="@product.Price" />
+                            <input type="hidden" name="Price" value="@Category.Products" />
                             <input type="submit" value="buy this" class="btn btn-primary mt-1" />
                         </form>
                     </div>

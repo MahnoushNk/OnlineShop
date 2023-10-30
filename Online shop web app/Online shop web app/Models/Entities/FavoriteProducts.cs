@@ -2,6 +2,6 @@
 
 public class FavoriteProducts
 {
-    public int Id { get; set; }
-    public List<Product> Products { get; set; }
+    public int PersonId { get; set; }
+    public int ProductId { get; set; }
 }

@@ -2,6 +2,6 @@
 
 public class RelatedProcuct
 {
-        public int Id { get; set; }
-    public List<Product> Products { get; set; }
+       
+    public List<Product> RelatedProcucts { get; set; }
 }

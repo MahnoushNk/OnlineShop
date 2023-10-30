@@ -1,3 +1,4 @@
+
 namespace Online_shop_web_app
 {
     public class Program
@@ -8,6 +9,7 @@ namespace Online_shop_web_app
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            
 
             var app = builder.Build();
 
