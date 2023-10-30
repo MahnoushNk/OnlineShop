@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Online_shop_web_app.Models.Entities;
-using Online_shop_web_app.Models.ResumeDbContext;
+
 using System.Diagnostics;
 
 namespace Online_shop_web_app.Controllers
