@@ -1,15 +1,14 @@
 ﻿namespace Online_shop_web_app.Models.Entities;
 
 
-    public class Checkout
-    {
+public class Checkout
+{
+    public int Id { get; set; }
+    public int UserId { get; set; }
+    public int ProductId { get; set; }
+    public int ProductQuantity { get; set; }
+    public int PaymentId { get; set; }
 
 
-        public int Id { get; set; }
-        public Person person { get; set; }
-        public string ProductName { get; set; }
-        public int ProductPrice { get; set; }
-
-
-    }
+}
 
