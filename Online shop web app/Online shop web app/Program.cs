@@ -1,4 +1,6 @@
 
+using Online_shop_web_app.Models.OnlineShopDbContext;
+
 namespace Online_shop_web_app
 {
     public class Program
@@ -9,6 +11,7 @@ namespace Online_shop_web_app
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<OnlineShopDbContext>();
             
 
             var app = builder.Build();

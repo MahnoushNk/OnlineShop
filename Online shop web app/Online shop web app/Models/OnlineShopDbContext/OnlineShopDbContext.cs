@@ -5,12 +5,16 @@ namespace Online_shop_web_app.Models.OnlineShopDbContext;
 
 public class OnlineShopDbContext : DbContext
 {
+
+    #region Ctor
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer("Data Source=DESKTOP-R8LD9GE;Initial Catalog=OnlineShop;Integrated Security=True;TrustServerCertificate=true;");
         base.OnConfiguring(optionsBuilder);
     }
-    #region Tables
+    #endregion
+
+    #region DbSet
     public DbSet<Product> Products { get; set; }
     public DbSet<Category> Categories { get; set; }
     public DbSet<SubCategory> SubCategories { get; set; }
@@ -21,6 +25,7 @@ public class OnlineShopDbContext : DbContext
     public DbSet<Checkout> Checkout { get; set; }
     public DbSet<Category_Product> CategoryProducts { get; set; }
     public DbSet<Category_SubCategory> CategorySubCategories { get; set; }
+    public DbSet<User_product> UserProducts { get; set; }
 
     #endregion
 
@@ -34,6 +39,7 @@ public class OnlineShopDbContext : DbContext
         modelBuilder.Entity<Category_Product>().HasNoKey();
         modelBuilder.Entity<Category_SubCategory>().HasNoKey();
         modelBuilder.Entity<WishList_Product>().HasNoKey();
+        modelBuilder.Entity<User_product>().HasNoKey();
 
 
 
