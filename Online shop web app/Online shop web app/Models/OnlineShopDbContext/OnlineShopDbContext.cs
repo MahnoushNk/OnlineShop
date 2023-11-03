@@ -14,6 +14,7 @@ public class OnlineShopDbContext : DbContext
     }
     #endregion
 
+
     #region DbSet
     public DbSet<Product> Products { get; set; }
     public DbSet<Category> Categories { get; set; }
