@@ -2,6 +2,6 @@
 {
     public class GetProductByIdAsyncDTO
     {
-        public int Id { get; set; }
+        public int ProductId { get; set; }
     }
 }

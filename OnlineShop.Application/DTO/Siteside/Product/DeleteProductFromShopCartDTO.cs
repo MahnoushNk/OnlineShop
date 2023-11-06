@@ -2,6 +2,6 @@
 {
     public class DeleteProductFromShopCartDTO
     {
-        public int Id { get; set; }
+        public int ProductId { get; set; }
     }
 }

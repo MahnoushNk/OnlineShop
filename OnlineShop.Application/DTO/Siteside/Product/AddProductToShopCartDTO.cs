@@ -2,6 +2,6 @@
 {
     public class AddProductToShopCartDTO
     {
-        public int Id { get; set; }
+        public int ProductId { get; set; }
     }
 }
