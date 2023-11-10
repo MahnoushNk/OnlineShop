@@ -4,102 +4,61 @@ using Online_shop_web_app.DTO.Siteside.Product;
 using Online_shop_web_app.Models;
 using Online_shop_web_app.Models.Entities;
 using Online_shop_web_app.Models.OnlineShopDbContext;
+using OnlineShop.Application.Services.Interfaces;
 
 namespace Online_shop_web_app.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly OnlineShopDbContext _context;
+        #region Ctor
+        private readonly IProductService _productService;
 
-        public ProductController(OnlineShopDbContext context)
+        public ProductController(IProductService productService)
         {
-            _context = context;
+            _productService = productService;
         }
-
+        #endregion
 
         #region Add Product To ShopCart
 
         public async Task AddProductToShopCart(AddProductToShopCartDTO model)
         {
-            #region ObjectMapping
 
-            Product product = new Product();
-            product.Id = model.Id;
-
-            #endregion
-
-
-            await _context.Products.AddAsync(product);
-            await _context.SaveChangesAsync();
-
+            await _productService.AddProductToShopCartDTO(model);
+          
         }
+
         #endregion
 
         #region DeleteProductFromShopCart
-        public async Task DeleteProductFromShopCart(AddProductToShopCartDTO model)
-        {
-            #region ObjectMapping
 
-            Product product = new Product();
-            product.Id = model.Id;
+        [HttpGet]
+        public async Task<IActionResult> DeleteProductFromShopCart(int productId)
+        {
+            #region Get A Product By Id
+
+            var education = await _productService.GetProductByIdAsync(productId);
 
             #endregion
+            return View(education);
+        }
 
-            _context.Products.Remove(product);
-            await _context.SaveChangesAsync();
-
+        [HttpPost]
+        public async Task DeleteProductFromShopCart(DeleteProductFromShopCartDTO model)
+        {
+            await _productService.DeleteProductFromShopCartDTO(model);
         }
 
         #endregion
-
-        #region GetProductById 
-
-        public async Task GetProductByIdAsync(GetProductByIdAsyncDTO model)
+    
+        #region List Of Products
+        [HttpGet]
+        public IActionResult ListOfProducts()
         {
-            #region ObjectMapping
-
-            Product product = new Product();
-            product.Id = model.Id;
-
-            #endregion
-
-            _context.Products.FirstOrDefaultAsync(e => e.Id == model.Id);
-
-
+            var model = _productService.GetListOfProductsDTOs();
+            return View(model);
         }
-        #endregion
 
-        #region ListOfProducts 
-
-        public List<ListOfProductsDTO> GetListOfProducts()
-        {
-            #region  Get List Of Products From Database
-
-            List<Product> products = _context.Products.ToList();
-
-            #endregion
-
-            #region ObjectMapping
-
-            List<ListOfProductsDTO> returnModel = new List<ListOfProductsDTO>();
-
-            foreach (var pro in products)
-            {
-                ListOfProductsDTO childModel = new ListOfProductsDTO();
-
-                childModel.Name = pro.Name;
-                childModel.Description = pro.Description;
-                childModel.Price = pro.Price;
-
-                returnModel.Add(childModel);
-
-
-            }
-            #endregion
-
-            return returnModel;
-
-        }
         #endregion
 
 

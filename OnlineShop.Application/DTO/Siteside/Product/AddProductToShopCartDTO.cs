@@ -3,5 +3,6 @@
     public class AddProductToShopCartDTO
     {
         public int ProductId { get; set; }
+      
     }
 }

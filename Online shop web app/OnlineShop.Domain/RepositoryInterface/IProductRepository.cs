@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using Online_shop_web_app.Models.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,12 @@ namespace OnlineShop.Domain.RepositoryInterface
 {
     public interface IProductRepository
     {
+        List<Product> GetListOfProducts();
+
+        Task<Product> GetProductByIdAsync(int productId);
+
+        Task AddProductToShopCart(Product product);
+
+        Task DeleteProductFromShopCart(Product product); 
     }
 }
