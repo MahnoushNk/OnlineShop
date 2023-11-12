@@ -2,20 +2,20 @@
 using Microsoft.EntityFrameworkCore;
 using Online_shop_web_app.Models.Entities;
 using Online_shop_web_app.Models.OnlineShopDbContext;
+using OnlineShop.Application.Services.Implementation;
+using OnlineShop.Application.Services.Interfaces;
 
 namespace Online_shop_web_app.Controllers
 {
     public class CategoryController : Controller
     {
         #region Ctor 
+        private readonly ICategoryService _categoryService;
 
-        //Dependency Injection
-
-        private OnlineShopDbContext _context;
-
-        public CategoryController(OnlineShopDbContext context)
+        public CategoryController(ICategoryService categoryService)
         {
-            _context = context;
+
+            _categoryService = categoryService;
         }
 
         #endregion
@@ -24,9 +24,8 @@ namespace Online_shop_web_app.Controllers
         public async Task<IActionResult> ListOfCategories()
         {
 
-            List<Category> ListOfCategories = await _context.Categories.ToListAsync();
-
-            return View();
+            var model = _categoryService.GetListOfCategoriesDTOs();
+            return View(model);
 
         }
 
