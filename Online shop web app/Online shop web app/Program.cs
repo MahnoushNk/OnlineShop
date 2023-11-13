@@ -1,5 +1,9 @@
 
 using Online_shop_web_app.Models.OnlineShopDbContext;
+using OnlineShop.Application.Services.Implementation;
+using OnlineShop.Application.Services.Interfaces;
+using OnlineShop.Domain.RepositoryInterface;
+using OnlineShop.Infrastructure.Repository;
 
 namespace Online_shop_web_app
 {
@@ -11,8 +15,28 @@ namespace Online_shop_web_app
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+
+            #region Repositories
+
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
+         
+            builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+
             builder.Services.AddDbContext<OnlineShopDbContext>();
-            
+
+            #endregion
+
+            #region Services
+
+            builder.Services.AddScoped<IProductService, ProductService>();
+
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
+
+            builder.Services.AddScoped<IDashboardService, DashboardService>();
+           
+            #endregion
+
 
             var app = builder.Build();
 

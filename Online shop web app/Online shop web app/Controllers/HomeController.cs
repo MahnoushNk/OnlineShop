@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Online_shop_web_app.Models.Entities;
-
+using OnlineShop.Application.Services.Interfaces;
 using System.Diagnostics;
 
 namespace Online_shop_web_app.Controllers
@@ -9,18 +9,19 @@ namespace Online_shop_web_app.Controllers
 
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-       
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IDashboardService _dashboardService;
+        public HomeController(IDashboardService dashboardService)
         {
-            _logger = logger;
+            _dashboardService = dashboardService;
+
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var model = await _dashboardService.FillDashboardModel();
+
+            return View(model);
         }
 
     }
