@@ -11,13 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OnlineShop.Infrastructure",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OnlineShop.Domain", "OnlineShop.Domain", "{17AC7BE9-D4FC-47CF-A017-DA99F9B6A039}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OnlineShop.Application", "OnlineShop.Application", "{F8BC1BC3-C0D0-4218-A73B-B264A711B6AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineShop.Domain", "OnlineShop.Domain\OnlineShop.Domain.csproj", "{169DC868-C8C5-4DA2-B676-E369E5FE6EA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.Application", "..\OnlineShop.Application\OnlineShop.Application.csproj", "{F5B338DD-6454-4328-BBE2-9F652E7E5DE4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.Domain", "OnlineShop.Domain\OnlineShop.Domain.csproj", "{169DC868-C8C5-4DA2-B676-E369E5FE6EA2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.Infrastructure", "OnlineShop.Infrastructure\OnlineShop.Infrastructure.csproj", "{DDD19306-B6F8-48CC-B4A6-5D0B06189A0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineShop.Infrastructure", "OnlineShop.Infrastructure\OnlineShop.Infrastructure.csproj", "{DDD19306-B6F8-48CC-B4A6-5D0B06189A0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +25,6 @@ Global
 		{42DB55BD-42B3-4A2F-BFBA-EFD5B94404DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42DB55BD-42B3-4A2F-BFBA-EFD5B94404DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42DB55BD-42B3-4A2F-BFBA-EFD5B94404DE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F5B338DD-6454-4328-BBE2-9F652E7E5DE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F5B338DD-6454-4328-BBE2-9F652E7E5DE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F5B338DD-6454-4328-BBE2-9F652E7E5DE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F5B338DD-6454-4328-BBE2-9F652E7E5DE4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{169DC868-C8C5-4DA2-B676-E369E5FE6EA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{169DC868-C8C5-4DA2-B676-E369E5FE6EA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{169DC868-C8C5-4DA2-B676-E369E5FE6EA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,7 +39,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{42DB55BD-42B3-4A2F-BFBA-EFD5B94404DE} = {22C2366E-2F22-4B01-940C-BC30E4032BC1}
-		{F5B338DD-6454-4328-BBE2-9F652E7E5DE4} = {F8BC1BC3-C0D0-4218-A73B-B264A711B6AD}
 		{169DC868-C8C5-4DA2-B676-E369E5FE6EA2} = {17AC7BE9-D4FC-47CF-A017-DA99F9B6A039}
 		{DDD19306-B6F8-48CC-B4A6-5D0B06189A0E} = {C830E4CD-3FBD-4A34-A845-33209ED7452F}
 	EndGlobalSection
