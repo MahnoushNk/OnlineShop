@@ -1,7 +1,7 @@
 ﻿
 
-namespace Online_shop_web_app.Models.Entities
-{
+namespace OnlineShop.Domain.Entities;
+
     public class Product
     {
         public int Id { get; set; }
@@ -18,4 +18,4 @@ namespace Online_shop_web_app.Models.Entities
 
 
     }
-}
+

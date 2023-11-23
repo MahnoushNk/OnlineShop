@@ -1,6 +1,7 @@
 ﻿using Online_shop_web_app.Models.Entities;
 using OnlineShop.Application.DTO.Siteside.User;
 using OnlineShop.Application.services.Interfaces;
+using OnlineShop.Domain.Entities;
 using OnlineShop.Domain.RepositoryInterface;
 using OnlineShop.Infrastructure.Repository;
 using System;

@@ -1,5 +1,7 @@
 
 using Online_shop_web_app.Models.OnlineShopDbContext;
+using OnlineShop.Application.services.Implementation;
+using OnlineShop.Application.services.Interfaces;
 using OnlineShop.Application.Services.Implementation;
 using OnlineShop.Application.Services.Interfaces;
 using OnlineShop.Domain.RepositoryInterface;
@@ -23,6 +25,8 @@ namespace Online_shop_web_app
          
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
+            builder.Services.AddScoped<IUserRepository, UserRepository>(); 
+
             builder.Services.AddDbContext<OnlineShopDbContext>();
 
             #endregion
@@ -32,6 +36,9 @@ namespace Online_shop_web_app
             builder.Services.AddScoped<IProductService, ProductService>();
 
             builder.Services.AddScoped<ICategoryService, CategoryService>();
+
+            builder.Services.AddScoped<IUserService, UserService>();
+
 
             builder.Services.AddScoped<IDashboardService, DashboardService>();
            

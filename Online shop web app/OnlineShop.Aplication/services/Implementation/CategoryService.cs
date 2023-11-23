@@ -1,5 +1,5 @@
 ﻿using Online_shop_web_app.DTO.Siteside.Product;
-using Online_shop_web_app.Models.Entities;
+using OnlineShop.Domain.Entities;
 using OnlineShop.Application.DTO.Siteside.Category;
 using OnlineShop.Application.Services.Interfaces;
 using OnlineShop.Domain.RepositoryInterface;

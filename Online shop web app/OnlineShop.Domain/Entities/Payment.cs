@@ -1,4 +1,4 @@
-﻿namespace Online_shop_web_app.Models.Entities;
+﻿namespace OnlineShop.Domain.Entities;
 
 public class Payment
 {

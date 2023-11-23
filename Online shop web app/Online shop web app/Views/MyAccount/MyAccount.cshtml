@@ -176,7 +176,16 @@
                             <ul class="dropdown-menu">
                                 <li><a href="cart.html">Cart</a></li>
                                 <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="my-account.html">My Account</a></li>
+                                <li>
+                                    <a 
+                                       asp-area=""
+                                       asp-controller="MyAccount"
+                                       asp-action="MyAccount">
+                                      
+                                        <p>MyAccount</p>
+                                    </a>
+                                
+                                </li>
                                 <li><a href="wishlist.html">Wishlist</a></li>
                                 <li><a href="shop-detail.html">Shop Detail</a></li>
                             </ul>
@@ -280,11 +289,17 @@
                         <div class="account-box">
                             <div class="service-box">
                                 <div class="service-icon">
-                                    <a href="#"><i class="fa fa-lock"></i> </a>
+                                    <a  
+                                       asp-area=""
+                                       asp-controller="MyAccount"
+                                       asp-action="Login">
+
+                                    </><i class="fa fa-lock"></i> </a>
                                 </div>
                                 <div class="service-desc">
-                                    <h4>Login &amp; security</h4>
+                                    <h4>Login</h4>
                                     <p>Edit login, name, and mobile number</p>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -293,11 +308,16 @@
                         <div class="account-box">
                             <div class="service-box">
                                 <div class="service-icon">
-                                    <a href="#"> <i class="fa fa-location-arrow"></i> </a>
+                                    <a asp-area=""
+                                       asp-controller="MyAccount"
+                                       asp-action="Register">
+
+                                        </> <i class="fa fa-location-arrow"></i>
+                                    </a>
                                 </div>
                                 <div class="service-desc">
-                                    <h4>Your Addresses</h4>
-                                    <p>Edit addresses for orders and gifts</p>
+                                    <h4>Register</h4>
+                                    <p>Register</p>
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 ﻿using Online_shop_web_app.DTO.Siteside.Home_Index;
-using Online_shop_web_app.Models.Entities;
+using OnlineShop.Domain.Entities;
 using OnlineShop.Application.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -39,8 +39,7 @@ namespace OnlineShop.Application.Services.Implementation
             HomeIndexModelDTO model = new HomeIndexModelDTO();
 
             model.Products = products;
-
-            model.Categories = categories;
+                
 
             return model;
         }

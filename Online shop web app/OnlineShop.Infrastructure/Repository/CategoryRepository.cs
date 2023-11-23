@@ -1,4 +1,4 @@
-﻿using Online_shop_web_app.Models.Entities;
+﻿using OnlineShop.Domain.Entities;
 using Online_shop_web_app.Models.OnlineShopDbContext;
 using OnlineShop.Domain.RepositoryInterface;
 using System;

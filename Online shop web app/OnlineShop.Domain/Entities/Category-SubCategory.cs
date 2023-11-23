@@ -1,7 +1,7 @@
 ﻿
 
-namespace Online_shop_web_app.Models.Entities
-{
+namespace OnlineShop.Domain.Entities;
+
 
     public class Category_SubCategory
     {
@@ -9,4 +9,4 @@ namespace Online_shop_web_app.Models.Entities
         public int SubCategoryId { get; set; }
     }
    
-}
+

@@ -1,4 +1,4 @@
-﻿using Online_shop_web_app.Models.Entities;
+﻿using OnlineShop.Domain.Entities;
 using Online_shop_web_app.Models.OnlineShopDbContext;
 using OnlineShop.Domain.RepositoryInterface;
 using System;
@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace OnlineShop.Infrastructure.Repository
 {
@@ -20,10 +21,10 @@ namespace OnlineShop.Infrastructure.Repository
         }
         #endregion 
 
-        public async Task AddUserToTheDatabase(User user)
-        {
-            await _context.Users.AddAsync(user);
-            await _context.SaveChangesAsync();
-        }
+        //public async Task AddUserToTheDatabase(User user)
+        //{
+        //    await _context.Users.AllAsync(user);
+        //    await _context.SaveChangesAsync();
+        //}
     }
 }

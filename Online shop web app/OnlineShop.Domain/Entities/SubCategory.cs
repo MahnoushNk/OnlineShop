@@ -1,5 +1,5 @@
-﻿namespace Online_shop_web_app.Models.Entities
-{
+﻿namespace OnlineShop.Domain.Entities;
+
     public class SubCategory
     {
         public int Id { get; set; }
@@ -7,4 +7,4 @@
         public Category category { get; set; }
 
     }
-}
+

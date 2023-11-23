@@ -1,4 +1,4 @@
-﻿using Online_shop_web_app.Models.Entities;
+﻿using OnlineShop.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,6 @@ namespace OnlineShop.Domain.RepositoryInterface
 {
     public interface IUserRepository
     {
-        Task AddUserToTheDatabase(User user);
+        //Task AddUserToTheDatabase(User user);
     }
 }

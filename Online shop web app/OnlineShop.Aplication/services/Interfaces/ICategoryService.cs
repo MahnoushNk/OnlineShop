@@ -1,4 +1,4 @@
-﻿using Online_shop_web_app.Models.Entities;
+﻿using OnlineShop.Domain.Entities;
 using OnlineShop.Application.DTO.Siteside.Category;
 using System;
 using System.Collections.Generic;
