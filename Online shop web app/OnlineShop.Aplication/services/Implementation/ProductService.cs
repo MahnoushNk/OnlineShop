@@ -12,7 +12,7 @@ namespace OnlineShop.Application.Services.Implementation
 {
     public class ProductService : IProductService
     {
-
+        #region Ctor
         private readonly IProductRepository _productRepository;
 
         public ProductService(IProductRepository productRepository)
@@ -20,7 +20,9 @@ namespace OnlineShop.Application.Services.Implementation
             _productRepository = productRepository;
 
         }
+        #endregion
 
+        #region AddProductToShopCart
         public async Task AddProductToShopCartDTO(AddProductToShopCartDTO model)
         {
             #region ObjectMapping
@@ -37,6 +39,7 @@ namespace OnlineShop.Application.Services.Implementation
 
             #endregion
         }
+        #endregion
 
         #region DeleteProductFromShopCart
 
