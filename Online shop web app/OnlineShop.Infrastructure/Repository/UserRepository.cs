@@ -21,10 +21,10 @@ namespace OnlineShop.Infrastructure.Repository
         }
         #endregion 
 
-        //public async Task AddUserToTheDatabase(User user)
-        //{
-        //    await _context.Users.AllAsync(user);
-        //    await _context.SaveChangesAsync();
-        //}
+        public async Task AddUserToTheDatabase(User user)
+        {
+            await _context.Users.AddAsync(user);
+            await _context.SaveChangesAsync();
+        }
     }
 }

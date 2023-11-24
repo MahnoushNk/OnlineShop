@@ -47,6 +47,8 @@ namespace Online_shop_web_app.Controllers
         [HttpPost,ValidateAntiForgeryToken]
         public IActionResult Register(User user)
         {
+            _context.Users.Add(user);
+            _context.SaveChanges();
            
             return RedirectToAction("Index","Home");
         }

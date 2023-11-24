@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Online_shop_web_app.Models.Entities;
+using OnlineShop.Domain.Entities;
 using Online_shop_web_app.Models.OnlineShopDbContext;
 using OnlineShop.Application.Services.Implementation;
 using OnlineShop.Application.Services.Interfaces;

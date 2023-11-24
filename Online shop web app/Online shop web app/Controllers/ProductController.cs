@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Online_shop_web_app.DTO.Siteside.Product;
 using Online_shop_web_app.Models;
-using Online_shop_web_app.Models.Entities;
+using OnlineShop.Domain.Entities;
 using Online_shop_web_app.Models.OnlineShopDbContext;
 using OnlineShop.Application.Services.Interfaces;
 

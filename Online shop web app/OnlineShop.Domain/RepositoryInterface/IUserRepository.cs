@@ -9,6 +9,6 @@ namespace OnlineShop.Domain.RepositoryInterface
 {
     public interface IUserRepository
     {
-        //Task AddUserToTheDatabase(User user);
+        Task AddUserToTheDatabase(User user);
     }
 }
