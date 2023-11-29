@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using OnlineShop.Application.DTO.Siteside.User;
 
 namespace OnlineShop.Infrastructure.Repository
 {
@@ -26,5 +27,15 @@ namespace OnlineShop.Infrastructure.Repository
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<User> GetAnUserByMobileAndPasswordAsync(string UserMobile, string Password)
+        {
+
+            return await _context.Users.FirstOrDefaultAsync(e => e.Mobile  == UserMobile.Trim()
+
+                                                              && e.Password == Password);
+        }
+
+    
     }
 }

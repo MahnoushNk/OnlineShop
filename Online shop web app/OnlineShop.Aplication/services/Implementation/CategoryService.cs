@@ -3,7 +3,6 @@ using OnlineShop.Domain.Entities;
 using OnlineShop.Application.DTO.Siteside.Category;
 using OnlineShop.Application.Services.Interfaces;
 using OnlineShop.Domain.RepositoryInterface;
-using OnlineShop.Infrastructure.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;

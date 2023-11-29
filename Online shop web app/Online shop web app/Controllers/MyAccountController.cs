@@ -3,7 +3,12 @@ using OnlineShop.Domain.Entities;
 using Online_shop_web_app.Models.OnlineShopDbContext;
 using OnlineShop.Application.services.Interfaces;
 using OnlineShop.Application.Services.Interfaces;
-using OnlineShop.Domain.Entities;
+using OnlineShop.Application.DTO.Siteside.User;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace Online_shop_web_app.Controllers
 {
@@ -12,18 +17,13 @@ namespace Online_shop_web_app.Controllers
 
         #region Ctor
 
-        private readonly OnlineShopDbContext _context;
 
-        public MyAccountController(OnlineShopDbContext context)
+        private readonly IUserService _userService;
+
+        public MyAccountController(IUserService userService)
         {
-            _context = context;
+            _userService = userService;
         }
-        //private readonly IUserService _userService;
-
-        //public MyAccountController(IUserService userService)
-        //{
-        //    _userService = userService;
-        //}
         #endregion
 
         #region MyAccount
@@ -45,12 +45,19 @@ namespace Online_shop_web_app.Controllers
         }
 
         [HttpPost,ValidateAntiForgeryToken]
-        public IActionResult Register(User user)
+        public IActionResult Register(AddUserToTheDatabaseDTO model)
         {
-            _context.Users.Add(user);
-            _context.SaveChanges();
-           
-            return RedirectToAction("Index","Home");
+            if (ModelState.IsValid)
+            {
+                //Add User to the database
+
+
+               _userService.AddUserToTheDatabase(model);
+
+                return RedirectToAction("Index", "Home");
+            }
+
+           return View();
         }
 
         #endregion
@@ -64,8 +71,43 @@ namespace Online_shop_web_app.Controllers
         }
 
         [HttpPost, ValidateAntiForgeryToken]
-        public IActionResult Login(User user)
+        public async Task<IActionResult>  Login(UserLoginDTO model)
         {
+            if (ModelState.IsValid)
+            {
+                #region Finde User 
+
+                var user = await _userService.GetAnUserByMobileAndPasswordAsync(model);
+                                                        
+
+                if (user == null)
+                {
+                    return NotFound();
+                }
+
+
+                #endregion
+
+                #region Setting Cookie
+
+                var claims = new List<Claim>
+                {
+                new (ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new (ClaimTypes.Name, user.UserName ),
+                };
+
+                var claimIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                var principal = new ClaimsPrincipal(claimIdentity);
+
+                var authProps = new AuthenticationProperties();
+                authProps.IsPersistent = model.RememberMe;
+
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, authProps);
+
+                return RedirectToAction("Index", "Home");
+                #endregion
+
+            }
             return View();
         }
 

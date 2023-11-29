@@ -1,4 +1,5 @@
 
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Online_shop_web_app.Models.OnlineShopDbContext;
 using OnlineShop.Application.services.Implementation;
 using OnlineShop.Application.services.Interfaces;
@@ -41,9 +42,27 @@ namespace Online_shop_web_app
 
 
             builder.Services.AddScoped<IDashboardService, DashboardService>();
-           
+
             #endregion
 
+            #region Authentication
+
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            })
+                // Add Cookie settings
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/MyAccount/Login";
+                    options.LogoutPath = "/MyAccount/Logout";
+                    options.ExpireTimeSpan = TimeSpan.FromDays(30);
+                });
+
+            #endregion
 
             var app = builder.Build();
 
@@ -60,6 +79,7 @@ namespace Online_shop_web_app
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(
