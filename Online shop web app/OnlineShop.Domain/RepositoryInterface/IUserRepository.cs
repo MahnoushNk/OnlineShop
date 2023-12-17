@@ -11,6 +11,8 @@ namespace OnlineShop.Domain.RepositoryInterface
     {
         Task AddUserToTheDatabase(User user);
 
-        Task<User> GetAnUserByMobileAndPasswordAsync(string UserMobile, string Password);
+        Task<User> GetUser(string UserMobile, string Password);
+
+        Task<User> GetUser(string UserMobile);
     }
 }

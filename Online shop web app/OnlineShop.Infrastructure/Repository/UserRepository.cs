@@ -28,7 +28,14 @@ namespace OnlineShop.Infrastructure.Repository
             await _context.SaveChangesAsync();
         }
 
-        public async Task<User> GetAnUserByMobileAndPasswordAsync(string UserMobile, string Password)
+
+
+        public Task<User> GetUser(string UserMobile)
+        {
+            return _context.Users.FirstOrDefaultAsync(e => e.Mobile == UserMobile);
+        }
+
+        public async Task<User> GetUser(string UserMobile, string Password)
         {
 
             return await _context.Users.FirstOrDefaultAsync(e => e.Mobile  == UserMobile.Trim()
@@ -36,6 +43,6 @@ namespace OnlineShop.Infrastructure.Repository
                                                               && e.Password == Password);
         }
 
-    
+       
     }
 }

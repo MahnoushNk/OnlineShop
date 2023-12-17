@@ -46,13 +46,27 @@ namespace OnlineShop.Application.services.Implementation
 
         }
 
+        public async Task<User> GetUser(UserProfileDTO model)
+        {
 
-        
-        public async Task<User> GetAnUserByMobileAndPasswordAsync(UserLoginDTO model)
+            #region ObjectMapping
+
+            User user = new User();
+
+            user.UserName = model.UserName;          
+            user.Mobile = model.Mobile.Trim();
+
+
+            #endregion
+
+            return await _userRepository.GetUser(model.Mobile);
+        }
+
+        public async Task<User> GetUser(UserLoginDTO model)
         {
 
 
-            return await _userRepository.GetAnUserByMobileAndPasswordAsync(model.Mobile, model.Password);
+            return await _userRepository.GetUser(model.Mobile, model.Password);
         }
         #endregion
     }

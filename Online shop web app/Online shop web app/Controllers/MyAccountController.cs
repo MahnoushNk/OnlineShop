@@ -54,7 +54,7 @@ namespace Online_shop_web_app.Controllers
 
                _userService.AddUserToTheDatabase(model);
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login", "MyAccount");
             }
 
            return View();
@@ -77,7 +77,7 @@ namespace Online_shop_web_app.Controllers
             {
                 #region Finde User 
 
-                var user = await _userService.GetAnUserByMobileAndPasswordAsync(model);
+                var user = await _userService.GetUser(model);
                                                         
 
                 if (user == null)
@@ -104,7 +104,7 @@ namespace Online_shop_web_app.Controllers
 
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, authProps);
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("MyAccount", "MyAccount");
                 #endregion
 
             }
@@ -112,5 +112,38 @@ namespace Online_shop_web_app.Controllers
         }
 
         #endregion
+
+
+        #region Log Out
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return Redirect("/");
+        }
+
+        #endregion
+
+        #region My Orders
+
+
+        [HttpGet]
+        public IActionResult MyOrders()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult MyProfile(UserProfileDTO model)
+        {
+            _userService.GetUser(model);
+
+            return View(model);
+
+        }
+
+
+        #endregion
     }
+
 }

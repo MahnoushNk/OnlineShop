@@ -1,0 +1,185 @@
+﻿@model OnlineShop.Application.DTO.Siteside.User.UserProfileDTO
+<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title>ThewayShop - Ecommerce Bootstrap 4 HTML Template</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+
+    <!-- Start All Title Box -->
+    <div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>MyOrders</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                        <li class="breadcrumb-item active">MyOrders</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End All Title Box -->
+
+   
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-sm-2" style="background-color:whitesmoke; padding-top:25px; padding-bottom:10px; ">
+                <div class="col-md-12 col-sm-12">
+
+                    <h1 class="title">My<strong>Profile</strong></h1>
+                    <a asp-controller="MyAccount"
+                       asp-action="MyProfile">
+
+                    </a>
+                    <p><span class="tm-info-label">Name : </span>@Model.UserName</p>
+                    <p><span class="tm-info-label">Address : </span> Melbourne Victoria 3000 Australia</p>
+                    <p><span class="tm-info-label">Phone : </span>@Model.Mobile</p>
+                    <p><span class="tm-info-label">Email : </span> hello@company.com</p>
+
+                </div>
+            </div>
+            <div class="col-sm-10" style="background-color:white;">
+                <!-- Start Wishlist  -->
+                <div class="wishlist-box-main">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="table-main table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Images</th>
+                                                <th>Product Name</th>
+                                                <th>Unit Price </th>
+                                                <th>Stock</th>
+                                                <th>Add Item</th>
+                                                <th>Remove</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="thumbnail-img">
+                                                    <a href="#">
+                                                        <img class="img-fluid" src="images/img-pro-01.jpg" alt="" />
+                                                    </a>
+                                                </td>
+                                                <td class="name-pr">
+                                                    <a href="#">
+                                                        Lorem ipsum dolor sit amet
+                                                    </a>
+                                                </td>
+                                                <td class="price-pr">
+                                                    <p>$ 80.0</p>
+                                                </td>
+                                                <td class="quantity-box">In Stock</td>
+                                                <td class="add-pr">
+                                                    <a class="btn hvr-hover" href="#">Add to Cart</a>
+                                                </td>
+                                                <td class="remove-pr">
+                                                    <a href="#">
+                                                        <i class="fas fa-times"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="thumbnail-img">
+                                                    <a href="#">
+                                                        <img class="img-fluid" src="images/img-pro-02.jpg" alt="" />
+                                                    </a>
+                                                </td>
+                                                <td class="name-pr">
+                                                    <a href="#">
+                                                        Lorem ipsum dolor sit amet
+                                                    </a>
+                                                </td>
+                                                <td class="price-pr">
+                                                    <p>$ 60.0</p>
+                                                </td>
+                                                <td class="quantity-box">In Stock</td>
+                                                <td class="add-pr">
+                                                    <a class="btn hvr-hover" href="#">Add to Cart</a>
+                                                </td>
+                                                <td class="remove-pr">
+                                                    <a href="#">
+                                                        <i class="fas fa-times"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="thumbnail-img">
+                                                    <a href="#">
+                                                        <img class="img-fluid" src="images/img-pro-03.jpg" alt="" />
+                                                    </a>
+                                                </td>
+                                                <td class="name-pr">
+                                                    <a href="#">
+                                                        Lorem ipsum dolor sit amet
+                                                    </a>
+                                                </td>
+                                                <td class="price-pr">
+                                                    <p>$ 30.0</p>
+                                                </td>
+                                                <td class="quantity-box">In Stock</td>
+                                                <td class="add-pr">
+                                                    <a class="btn hvr-hover" href="#">Add to Cart</a>
+                                                </td>
+                                                <td class="remove-pr">
+                                                    <a href="#">
+                                                        <i class="fas fa-times"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Wishlist -->
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+

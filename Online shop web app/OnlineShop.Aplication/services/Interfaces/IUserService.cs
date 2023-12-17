@@ -13,6 +13,8 @@ namespace OnlineShop.Application.services.Interfaces
     {
         Task AddUserToTheDatabase(AddUserToTheDatabaseDTO model);
 
-        Task<User> GetAnUserByMobileAndPasswordAsync(UserLoginDTO model);
+        Task<User> GetUser(UserLoginDTO model);
+
+        Task<User> GetUser(UserProfileDTO model);
     }
 }
